@@ -54,7 +54,7 @@ MT-Network-Type: WIFI
 MT-Token: 1
 MT-Team-ID: 
 MT-Info: 028e7f96f6369cafe1d105579c5b9377
-#MT-Device-ID: 2F2075D0-B66C-4287-A903-DBFF6358342A
+#MT-Device-ID: clips_fht5Sy1LfUl8S39MekkoSnkfJhMqTH9KfkovSi4=
 MT-Device-ID:fd681f73-fa03-4f33-8612-238b19ce1327
 MT-Bundle-ID: com.moutai.mall
 Accept-Language: en-CN;q=1, zh-Hans-CN;q=0.9
