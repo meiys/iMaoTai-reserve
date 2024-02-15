@@ -42,6 +42,27 @@ mt_version = get_mt_version()
 # 通过ios应用商店的api获取最新版本
 mt_version = json.loads(requests.get('https://itunes.apple.com/cn/lookup?id=1600482450').text)['results'][0]['version']
 
+login_header=f'''
+Host: app.moutai519.com.cn
+Connection: keep-alive
+Content-Type: application/json
+MT-Device-ID: deviceid
+MT-User-Tag: 0
+Accept: */*
+MT-Network-Type: WIFI
+MT-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJtdCIsImV4cCI6MTY3NzAzMDk4OSwidXNlcklkIjoxMDU0NDI3MzYxLCJkZXZpY2VJZCI6IjJGMjA3NUQwLUI2NkMtNDI4Ny1BOTAzLURCRkY2MzU4MzQyQyIsImlhdCI6MTY3NDQzODk4OX0.jMzprM-mO6yBTG3pjEcmq2fUgAjKwyuWHREmY6vynv0
+MT-K: 1675600193742
+MT-Team-ID: 
+MT-Bundle-ID: com.moutai.mall
+MT-V: adc8d8d93d0a7aa61bc1df89ad5
+User-Agent: iOS;16.3;Apple;?unrecognized?
+Accept-Language: en-CN;q=1, zh-Hans-CN;q=0.9
+MT-Request-ID: 167560019374225511
+MT-R: clips_OlU6TmFRag5rCXwbNAQ/Tz1SKlN8THcecBp/HGhHdw==
+MT-APP-Version: 1.3.6
+Content-Length: 65
+Accept-Encoding: gzip, deflate, br
+'''
 
 header_context = f'''
 MT-Lat: 28.499562
