@@ -75,7 +75,6 @@ MT-Network-Type: WIFI
 MT-Token: 1
 MT-Team-ID: 
 MT-Info: 028e7f96f6369cafe1d105579c5b9377
-MT-Device-ID: 2F2075D0-B66C-4287-A903-DBFF6358342A
 MT-Bundle-ID: com.moutai.mall
 Accept-Language: en-CN;q=1, zh-Hans-CN;q=0.9
 MT-Request-ID: 167560018873318465
@@ -89,9 +88,10 @@ Content-Type: application/json
 userId: 2
 '''
 #MT-Device-ID:clips_fht5Sy1LfUl8S39MekkoSnkfJhMqTH9KfkovSi4=
+#MT-Device-ID: 2F2075D0-B66C-4287-A903-DBFF6358342A
 
 # 初始化请求头
-def init_headers(user_id: str = '1', token: str = '2', lat: str = '29.83826', lng: str = '119.74375'):
+def init_headers(user_id: str = '1', token: str = '2', lat: str = '29.83826', lng: str = '119.74375',deviceid:str='3'):
     for k in header_context.strip().split("\n"):
         temp_l = k.split(': ')
         dict.update(headers, {temp_l[0]: temp_l[1]})
@@ -100,6 +100,7 @@ def init_headers(user_id: str = '1', token: str = '2', lat: str = '29.83826', ln
     dict.update(headers, {"MT-Lat": lat})
     dict.update(headers, {"MT-Lng": lng})
     dict.update(headers, {"MT-APP-Version": mt_version})
+    dict.update(headers,{"MT-Device-ID":deviceid}
 
 
 def signature(data: dict):
