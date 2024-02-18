@@ -45,12 +45,13 @@ for section in configs.sections():
     userId = privateCrypt.decrypt_aes_ecb(configs.get(section, 'userid'), aes_key)
     lat = configs.get(section, 'lat')
     lng = configs.get(section, 'lng')
+    deviceid=configs.get(section,'deviceid')
 
     p_c_map, source_data = process.get_map(lat=lat, lng=lng)
 
     process.UserId = userId
     process.TOKEN = token
-    process.init_headers(user_id=userId, token=token, lng=lng, lat=lat)
+    process.init_headers(user_id=userId, token=token, lng=lng, lat=lat,deviceid=deviceid)
     # 根据配置中，要预约的商品ID，城市 进行自动预约
     try:
         for item in config.ITEM_CODES:
