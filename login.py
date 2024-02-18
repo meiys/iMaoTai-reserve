@@ -3,6 +3,7 @@ import os
 import config as cf
 import process
 import privateCrypt
+import uuid
 
 config = configparser.ConfigParser()  # 类实例化
 
@@ -51,7 +52,8 @@ if __name__ == '__main__':
     aes_key = privateCrypt.get_aes_key()
 
     while 1:
-        process.init_headers()
+        deviceid=str(uuid.uuid4())
+        process.init_headers(deviceid=deviceid)
         location_select: dict = get_location()
         province = location_select['province']
         city = location_select['city']
@@ -79,9 +81,10 @@ if __name__ == '__main__':
         config.set(encrypt_mobile, 'province', str(province))
         config.set(encrypt_mobile, 'city', str(city))
         config.set(encrypt_mobile, 'token', str(token))
-
+        config.set(encrypt_mobile,'deviceid',deviceid)
         config.set(encrypt_mobile, 'lat', location.split(',')[1])
         config.set(encrypt_mobile, 'lng', location.split(',')[0])
+        
 
         config.write(open(path, 'w+', encoding="utf-8"))  # 保存数据
 
