@@ -100,7 +100,7 @@ def init_headers(user_id: str = '1', token: str = '2', lat: str = '29.83826', ln
     dict.update(headers, {"MT-Lat": lat})
     dict.update(headers, {"MT-Lng": lng})
     dict.update(headers, {"MT-APP-Version": mt_version})
-    dict.update(headers,{"MT-Device-ID":deviceid}
+    dict.update(headers,{"MT-Device-ID":deviceid})
 
 
 def signature(data: dict):
